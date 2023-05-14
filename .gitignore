@@ -1,0 +1,14 @@
+/lib
+/media
+.env
+/include
+/reports
+.DS_Store
+*.pyc
+celerybeat-schedule.db
+__pycache__/
+db.sqlite3
+log.django
+settings.py
+static/
+/static
