@@ -37,8 +37,6 @@ class NewUser(AbstractBaseUser, PermissionsMixin):
     first_name = models.CharField(max_length=150, blank=True)
     last_name = models.CharField(max_length=150, blank=True)
     start_date = models.DateTimeField(default=timezone.now)
-    about = models.TextField(_(
-        'about'), max_length=500, blank=True)
     is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
     objects = CustomAccountManager()
@@ -55,6 +53,9 @@ def upload_to(instance, filename):
 class Profile(models.Model):
         profilepic = PictureField("Image", upload_to=upload_to, default='tour/default.jpg',aspect_ratios=["16/9","1/1"])
         user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True)
+        about_short = models.CharField(max_length=150, null=True)
+        about = models.TextField(_(
+        'about'), max_length=500, blank=True)
 
 """   def create_user(self, email, user_name, first_name, password, **other_fields):
         if not email:

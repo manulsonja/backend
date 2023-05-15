@@ -1,7 +1,6 @@
 from rest_framework import serializers
 from touren.models import Tour, Hochtour, Wandern, Klettertour, HikeAndFly, Skitour
 from pictures.contrib.rest_framework import PictureField
-from pictures.contrib.rest_framework import PictureField
 from users.serializers import AuthorSerializer
 
 class PictureSerializer(serializers.Serializer):
